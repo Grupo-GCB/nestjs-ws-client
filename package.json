@@ -1,0 +1,44 @@
+{
+  "name": "@grupo-gcb/nestjs-ws-client",
+  "version": "1.0.5",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "prepublish": "tsc",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "prepublish": "npx tsc --outDir ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grupo-GCB/nestjs-ws-client.git"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn version --patch --no-git-tag-version && git add ."
+    }
+  },
+  "keywords": [],
+  "author": "Flávio Marques",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Grupo-GCB/nestjs-ws-client/issues"
+  },
+  "homepage": "https://github.com/Grupo-GCB/nestjs-ws-client#readme",
+  "dependencies": {
+    "@golevelup/nestjs-discovery": "^3.0.0",
+    "@nestjs/common": "^9.0.4",
+    "@nestjs/core": "^9.0.4",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.5.6",
+    "ws": "^8.8.1"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.3"
+  }
+}
