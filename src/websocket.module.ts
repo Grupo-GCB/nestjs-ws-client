@@ -1,6 +1,6 @@
 import { DynamicModule, Logger, Module, OnApplicationShutdown, OnModuleInit, Scope } from '@nestjs/common';
-import { DiscoveryModule, DiscoveryService } from '@golevelup/nestjs-discovery';
 import { MetadataScanner, ModuleRef, ModulesContainer, Reflector } from '@nestjs/core';
+import { DiscoveryModule, DiscoveryService } from '@golevelup/nestjs-discovery';
 import { ClientOptions, WebSocket } from 'ws';
 
 import {
