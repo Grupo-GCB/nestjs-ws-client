@@ -1,6 +1,6 @@
 import { DynamicModule, Logger, Module, OnApplicationShutdown, OnModuleInit, Scope } from '@nestjs/common';
 import { DiscoveryModule, DiscoveryService } from '@golevelup/nestjs-discovery';
-import { MetadataScanner, ModuleRef, Reflector } from '@nestjs/core';
+import { MetadataScanner, ModuleRef, ModulesContainer, Reflector } from '@nestjs/core';
 import { ClientOptions, WebSocket } from 'ws';
 
 import {
@@ -23,7 +23,7 @@ type Options = {
 
 @Module({
   imports: [DiscoveryModule],
-  providers: [MetadataScanner],
+  providers: [MetadataScanner, ModulesContainer],
 })
 export class SocketModule implements OnModuleInit, OnApplicationShutdown {
   private readonly logger = new Logger('Socket Module');
