@@ -34,9 +34,10 @@
     "ws": "^8.8.1"
   },
   "peerDependencies": {
-    "@nestjs/common": "^9.0.5",
     "@nestjs/core": "^9.0.5",
-    "reflect-metadata": "^0.1.13"
+    "@nestjs/common": "^9.0.5",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.5.6"
   },
   "devDependencies": {
     "@golevelup/nestjs-discovery": "^3.0.0",
