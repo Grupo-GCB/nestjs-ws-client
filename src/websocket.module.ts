@@ -65,6 +65,7 @@ export class SocketModule implements OnModuleInit, OnApplicationShutdown {
 
     if (!thisConnectionHandler) {
       this.logger.error('Error finding the WebSocket connection to bind the event handlers!');
+      return;
     }
 
     const { instance } = thisConnectionHandler.discoveredClass;
