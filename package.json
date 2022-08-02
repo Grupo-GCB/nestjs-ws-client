@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/Grupo-GCB/nestjs-ws-client#readme",
   "dependencies": {
+    "@golevelup/nestjs-discovery": "^3.0.0",
     "ws": "^8.8.1"
   },
   "peerDependencies": {
@@ -40,7 +41,6 @@
     "rxjs": "^7.5.6"
   },
   "devDependencies": {
-    "@golevelup/nestjs-discovery": "^3.0.0",
     "@nestjs/common": "^9.0.5",
     "@nestjs/core": "^9.0.5",
     "@types/ws": "^8.5.3",
