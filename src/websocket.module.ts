@@ -62,6 +62,7 @@ export class SocketModule implements OnModuleInit, OnApplicationShutdown {
 
     const handlers = await this.discoveryService.providersWithMetaAtKey(WS_CONNECTION_NAME);
     const thisConnectionHandler = handlers.find(({ meta }) => meta === connectionName);
+    console.log({handlers});
 
     if (!thisConnectionHandler) {
       this.logger.error('Error finding the WebSocket connection to bind the event handlers!');
