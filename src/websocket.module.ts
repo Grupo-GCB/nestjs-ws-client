@@ -11,7 +11,6 @@ import {
 } from './websocket.constants';
 
 import { createProviderToken } from './websocket.utils';
-import { buildWebSocketWithReconnection } from './build-websocket-with-reconnection';
 
 export interface WebSocketEventMetadata {
   event: string;
@@ -20,7 +19,6 @@ export interface WebSocketEventMetadata {
 type Options = {
   name: string;
   url: string;
-  reconnectAfter?: number;
 } & ClientOptions;
 
 @Module({
@@ -37,7 +35,7 @@ export class SocketModule implements OnModuleInit, OnApplicationShutdown {
     private readonly module: ModuleRef,
   ) {}
 
-  static register({ url, name, reconnectAfter, ...options }: Options): DynamicModule {
+  static register({ url, name, ...options }: Options): DynamicModule {
     const providerToken = createProviderToken(name);
 
     return {
@@ -45,10 +43,7 @@ export class SocketModule implements OnModuleInit, OnApplicationShutdown {
       providers: [
         {
           provide: providerToken,
-          useFactory: () => {
-            if (!reconnectAfter) return new WebSocket(url, options);
-            return buildWebSocketWithReconnection(url, options, reconnectAfter)
-          },
+          useFactory: () => new WebSocket(url, options),
           scope: Scope.TRANSIENT,
         },
         {
